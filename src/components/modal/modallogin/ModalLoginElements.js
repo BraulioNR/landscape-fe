@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { keyframes } from "styled-components"
 
 export const LinkForm = styled(Link)`
   text-decoration: none;
@@ -9,7 +10,7 @@ export const LinkForm = styled(Link)`
 export const Text = styled.p`
   color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
-  margin: 28px 123px 3.5px;
+  margin: 28px 123px 3.5px 58px;
   text-align: left;
 `
 
@@ -38,6 +39,14 @@ export const Input = styled.input`
     color: #009fc7;
   }
 `
+const rotate = keyframes`
+  from  {
+      transform: rotate(0deg);
+    }
+    to  {
+      transform: rotate(360deg);
+    }
+`
 
 export const ButtonSubmit = styled.button`
   width: 80%;
@@ -46,6 +55,33 @@ export const ButtonSubmit = styled.button`
   color: #ffffff;
   border: none;
   margin-top: 5%;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    animation: 0.8s linear infinite ${rotate};
+  }
+  &.sending {
+    pointer-events: none;
+    cursor: not-allowed;
+
+    &:before {
+      transition-delay: 0.5s;
+      transition-duration: 1s;
+      opacity: 1;
+    }
+  }
 `
 
 export const Forget = styled.p`

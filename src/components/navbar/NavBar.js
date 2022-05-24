@@ -61,10 +61,10 @@ const NavBar = (props) => {
             </HeaderMenuProfile>
             <ul>
               <li>
-                <Link to="/">My Photos</Link>
+                <Link to="/photos/mylist">My Photos</Link>
               </li>
               <li>
-                <Link to="/">Perfile</Link>
+                <Link to="/user/myperfile">Perfile</Link>
               </li>
               <li>
                 <Link to="/" onClick={funlogout}>
@@ -78,7 +78,7 @@ const NavBar = (props) => {
         <Collapse navbar isOpen={!collapsed}>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/">Photos</NavLink>
+              <NavLink href="/photos">Photos</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/regions">Regions</NavLink>
@@ -87,12 +87,12 @@ const NavBar = (props) => {
               <NavLink href="/">Blog</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">About</NavLink>
+              <NavLink href="/about">About</NavLink>
             </NavItem>
           </Nav>
           {!props.isAuth && (
             <>
-              <Login onClick={toggle} to="/">
+              <Login onClick={toggle} className="slide" to="/">
                 Login
               </Login>
               <ModalLogin
