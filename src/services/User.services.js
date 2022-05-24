@@ -16,7 +16,7 @@ export const logIn = async (objUser) => {
 
 export const postUsers = async (objUser) => {
   const result = await axios.post(
-    `${URL_BACKEND}/users/signup`,
+    `${URL_BACKEND}/auth/signup`,
     JSON.stringify(objUser),
     {
       headers: {
@@ -27,13 +27,26 @@ export const postUsers = async (objUser) => {
   return result.data
 }
 
-export const putUsers = async (objUser) => {
+export const updateUsers = async (objUser) => {
   const response = await axios.put(
-    `${URL_BACKEND}/users/${objUser._id}`,
+    `${URL_BACKEND}/user`,
     JSON.stringify(objUser),
     {
-      headers: { "Content-type": "Application/json" },
+      headers: {
+        "Content-type": "Application/json",
+        "Authorization": "Bearer " + localStorage.getItem("token"),
+      },
     }
   )
-  return response
+  return response.data
+}
+
+export const showUsers = async () => {
+  const response = await axios.get(`${URL_BACKEND}/user`, {
+    headers: {
+      "Content-type": "Application/json",
+      "Authorization": "Bearer " + localStorage.getItem("token"),
+    },
+  })
+  return response.data
 }
