@@ -135,19 +135,16 @@ const CreatePhotoPage = () => {
 
   function handleChange(e) {
     const valor = e.target.value
-    console.log(form.length)
     setForm({
       ...form,
       [e.target.name]: valor,
     })
-    console.log(form)
   }
   function handleRating(e, rating) {
     setForm({
       ...form,
       rating: rating,
     })
-    console.log(form)
   }
   function handleSwitch(e) {
     const valor = e.target.checked
@@ -155,7 +152,6 @@ const CreatePhotoPage = () => {
       ...form,
       [e.target.name]: valor,
     })
-    console.log(form)
   }
   function handleImg(file) {
     const fileRider = new FileReader()
@@ -163,14 +159,12 @@ const CreatePhotoPage = () => {
     fileRider.readAsDataURL(file)
   }
   function convert(e) {
-    console.log(form)
     e.preventDefault()
     for (const [key, value] of Object.entries(form)) {
       formData.append(key, value)
     }
     formData.append("regionId", regionId)
     formData.append("location", valueLngLat)
-    console.log(formData.get("location"))
     if (file) {
       formData.append("image", file, file.filename)
     } else {
