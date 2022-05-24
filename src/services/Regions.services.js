@@ -18,3 +18,12 @@ export const GetRegion = async ({ idRegion }) => {
   })
   return result.data
 }
+
+export const AllRegions = async () => {
+  const result = await axios.get(`${URL_BACKEND}/regions`, {
+    headers: {
+      "Content-type": "application/json",
+    },
+  })
+  return result.data
+}

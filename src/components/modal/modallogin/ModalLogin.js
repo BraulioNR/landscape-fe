@@ -15,6 +15,7 @@ const emptyForm = {
 }
 const ModalLogin = ({ modal, toggle, setModalLog, changeBoth }) => {
   const [form, setForm] = useState(emptyForm)
+  const [active, setActive] = useState(false)
   const handleChange = (e) => {
     const valor = e.target.value
     setForm({
@@ -29,6 +30,7 @@ const ModalLogin = ({ modal, toggle, setModalLog, changeBoth }) => {
     logIn(form)
       .then((data) => {
         if (data.token) {
+          setActive(false)
           localStorage.setItem("token", data.token)
           localStorage.setItem("perfile", data.perfile)
           setModalLog(!modal)
@@ -59,7 +61,15 @@ const ModalLogin = ({ modal, toggle, setModalLog, changeBoth }) => {
             id="password"
             onChange={handleChange}
           />
-          <ButtonSubmit type="submit">Sign In</ButtonSubmit>
+          <ButtonSubmit
+            type="submit"
+            className={active ? "sending" : ""}
+            onClick={() => {
+              setActive(true)
+            }}
+          >
+            Sign In
+          </ButtonSubmit>
         </form>
       </ModalBody>
       <ModalFooter style={{ textAlign: "center" }}>

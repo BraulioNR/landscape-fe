@@ -7,9 +7,10 @@ export const Container = styled.footer`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px 0px 0px 0px;
+
   padding: 25px;
   font-size: 15px;
+  width: 100%;
 `
 
 export const Links = styled(Link)`

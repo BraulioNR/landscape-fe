@@ -5,6 +5,7 @@ import {
   TextButton,
   Title,
   DivDepartments,
+  DivTitleBox,
 } from "./LandingPageElements"
 
 import BoxElement from "../../components/boxphotos/BoxPhotos"
@@ -75,10 +76,16 @@ const LandingPage = () => {
       <TextButton>
         <IsAuthenticated />
       </TextButton>
-      <DivDepartments>
-        {loading && <LoadingPage></LoadingPage>}
-        {!loading && <BoxElement regions={regions}></BoxElement>}
-      </DivDepartments>
+
+      {loading && <LoadingPage></LoadingPage>}
+      {!loading && (
+        <DivDepartments>
+          <DivTitleBox>
+            <h3>Discover the best 6 regions</h3>
+          </DivTitleBox>
+          <BoxElement regions={regions}></BoxElement>
+        </DivDepartments>
+      )}
     </Container>
   )
 }

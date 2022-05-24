@@ -6,6 +6,7 @@ export const NavBarSC = styled(Navbar)`
   background-color: #11111f;
   padding-right: 15px;
   color: #fff;
+  opacity: 0.9;
   && a.nav-link:hover {
     color: #22d1b1;
   }
@@ -23,21 +24,54 @@ export const Logo = styled.img`
 `
 export const LinkLogo = styled(Link)`
   width: 185.6px;
+  height: 84.9px;
 `
 export const SignUP = styled(Link)`
-  border-radius: 25px;
-  width: 90px;
-  height: 42px;
-  background-color: #22d1b1;
-  color: #fff;
-  border: 2px solid #22d1b1;
-  margin-right: 30px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+  @media (min-width: 1200px) {
+    border-radius: 25px;
+    width: 90px;
+    height: 42px;
+    background-color: #22d1b1;
+    color: #fff;
+    border: 2px solid #22d1b1;
+    margin-right: 30px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    :after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: #76d7c4;
+      transition: all 0.3s ease;
+    }
+
+    :hover {
+      color: rgb(0, 0, 0);
+    }
+
+    :hover:after {
+      top: auto;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+
   @media (max-width: 1200px) {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     color: rgba(255, 255, 255, 0.55);
     border-radius: 0px;
     width: 90px;
@@ -49,23 +83,51 @@ export const SignUP = styled(Link)`
     margin-left: 15px;
     :hover {
       text-decoration: none;
-      color: #fff;
+      color: #22d1b1;
     }
   }
 `
 export const Login = styled(Link)`
-  border-radius: 5px;
-  width: 90px;
-  height: 42px;
+  @media (min-width: 1200px) {
+    border-radius: 5px;
+    width: 90px;
+    height: 42px;
+    color: #22d1b1;
+    border: 2px solid #22d1b1;
+    margin-right: 30px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: white;
 
-  color: #22d1b1;
-  border: 2px solid #22d1b1;
-  margin-right: 30px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+    :after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 0;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: #22d1b1;
+      transition: all 0.3s ease;
+    }
+
+    :hover {
+      color: rgb(0, 0, 0);
+    }
+
+    :hover:after {
+      top: auto;
+      bottom: 0;
+      height: 100%;
+    }
+  }
+
   @media (max-width: 1200px) {
     color: rgba(255, 255, 255, 0.55);
     text-align: left;
@@ -73,9 +135,10 @@ export const Login = styled(Link)`
     border: 0;
     border-radius: 0;
     margin-left: 15px;
+    text-decoration: none;
     :hover {
       text-decoration: none;
-      color: #fff;
+      color: #22d1b1;
     }
   }
 `
@@ -88,8 +151,16 @@ export const HeaderMenuProfile = styled.div`
 export const HeaderMenuProfileImg = styled.img`
   margin-right: 30px;
   width: 50px;
+  @media (max-width: 1200px) {
+    position: absolute;
+    left: 45%;
+  }
 `
 export const HeaderMenu = styled.div`
+  @media (max-width: 1200px) {
+    position: absolute;
+    left: 45%;
+  }
   @media (min-width: 1200px) {
     margin-right: 30px;
     position: absolute;

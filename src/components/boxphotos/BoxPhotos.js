@@ -16,6 +16,7 @@ const BoxElement = (props) => {
   function GoRegion(id) {
     navigate(`/regions/${id}`)
   }
+
   return (
     <Box
       sx={{
@@ -30,7 +31,7 @@ const BoxElement = (props) => {
           focusRipple
           key={image.name}
           style={{
-            width: "33%",
+            width: "33.33%",
           }}
           href=""
           onClick={() => {
@@ -40,10 +41,10 @@ const BoxElement = (props) => {
           <ImageSrc
             style={{
               backgroundImage: `url(${image.src})`,
+              height: "100%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center center",
               backgroundSize: "cover",
-              height: "100%",
             }}
           />
           <ImageBackdrop className="MuiImageBackdrop-root" />
