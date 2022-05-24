@@ -5,7 +5,6 @@ import {
   Route,
   Navigate,
 } from "react-router-dom"
-import Prueba from "./pages/prueba"
 import Landing from "./pages/Landing"
 import Region from "./pages/Region"
 import AllRegion from "./pages/AllRegions"
@@ -27,7 +26,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/prueba" element={<Prueba />} />
         <Route path="/regions" element={<AllRegion />} />
         <Route path="/regions/:idRegion" element={<Region />} />
         <Route path="/about" element={<About />} />
