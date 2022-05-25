@@ -61,7 +61,7 @@ const ModalSignUp = ({ modal, toggle, setModalSignUp, changeBoth }) => {
           <Text htmlFor="name">Name</Text>
           <Input
             placeholder="Enter your name"
-            pattern="[A-Za-z]{1,}"
+            pattern="[A-Za-z\s]{1,}"
             name="name"
             id="name"
             onChange={handleChange}
@@ -69,7 +69,7 @@ const ModalSignUp = ({ modal, toggle, setModalSignUp, changeBoth }) => {
           <Text htmlFor="lastName">LastName</Text>
           <Input
             placeholder="Enter your lastname"
-            pattern="[A-Za-z]{1,}"
+            pattern="[A-Za-z\s]{1,}"
             name="lastName"
             id="lastName"
             onChange={handleChange}
