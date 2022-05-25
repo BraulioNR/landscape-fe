@@ -329,7 +329,7 @@ const EditPhotoPage = ({ idPhoto }) => {
           <Divmap ref={mapContainer} id="map"></Divmap>
         </DivLocation>
       </DivData>
-      <ButtonSubmit onClick={convert}>Enviar</ButtonSubmit>
+      <ButtonSubmit onClick={convert}>Save</ButtonSubmit>
     </Container>
   )
 }

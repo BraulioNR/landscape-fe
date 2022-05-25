@@ -363,7 +363,7 @@ const CreatePhotoPage = () => {
           <Divmap ref={mapContainer} id="map"></Divmap>
         </DivLocation>
       </DivData>
-      {show && <ButtonSubmit onClick={convert}>Enviar</ButtonSubmit>}
+      {show && <ButtonSubmit onClick={convert}>Create</ButtonSubmit>}
     </Container>
   )
 }
