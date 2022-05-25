@@ -84,9 +84,6 @@ const NavBar = (props) => {
               <NavLink href="/regions">Regions</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">Blog</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="/about">About</NavLink>
             </NavItem>
           </Nav>
